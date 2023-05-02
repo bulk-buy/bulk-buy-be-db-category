@@ -167,6 +167,7 @@ describeGitHubActions("database CRUD operations", () => {
 
   const inputEntity = {
     name: "entityName",
+    description: "description",
   };
   let initialRecords;
   let createdEntity;

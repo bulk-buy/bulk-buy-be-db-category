@@ -20,9 +20,13 @@ const options = {
   validator: {
     $jsonSchema: {
       bsonType: "object",
-      required: ["name"],
+      required: ["name", "description"],
       properties: {
         name: {
+          bsonType: "string",
+          description: "is required, must be a string",
+        },
+        description: {
           bsonType: "string",
           description: "is required, must be a string",
         },
@@ -62,6 +66,10 @@ mongoose.connection.on("open", () => {
 const schema = new mongoose.Schema(
   {
     name: {
+      type: String,
+      required: true,
+    },
+    description: {
       type: String,
       required: true,
     },
